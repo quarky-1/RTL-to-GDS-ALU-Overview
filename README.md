@@ -59,20 +59,20 @@ required. This project was an attempt to demonstrate that and document the journ
 
 RTL verified using Icarus Verilog with waveform viewed in GTKWave.
 
-![ALU Simulation Waveform](simulation/alu_wave.png)
+![ALU Simulation Waveform](alu_wave.png)
 
 ---
 
 ## Layout Visualization
 
 ### Full Layout
-![Full Layout](images/layout_full.png)
+![Full Layout](layout_full.png)
 
 ### Zoomed View
-![Zoomed View](images/zoomed.png)
+![Zoomed View](zoomed.png)
 
 ### Routing View
-![Routing](images/routing.png)
+![Routing](routing.png)
 
 ---
 
