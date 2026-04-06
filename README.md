@@ -112,9 +112,8 @@ RTL verified using Icarus Verilog with waveform viewed in GTKWave.
 
 ## Author
 
-**Sarthak Tripathi**
-Electronics Engineering Student, VLSI Design and Technology
+**Sarthak Tripathi**  
+Electronics Engineering (VLSI Design and Technology)  
 Jaypee Institute of Information Technology, Noida
-
 [LinkedIn](https://www.linkedin.com/in/sarthak-tripathi-0b925b1b7/) &nbsp;|&nbsp;
 [GitHub](https://github.com/quarky-1)
