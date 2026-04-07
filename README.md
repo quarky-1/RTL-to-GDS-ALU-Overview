@@ -6,17 +6,47 @@
 
 ## Overview
 
-This project documents the complete RTL-to-GDSII physical design flow of an 8-bit ALU
-using the OpenLane open-source toolchain and the Sky130 Process Design Kit.
+This project documents the complete RTL-to-GDSII physical design flow of an 8-bit ALU using the OpenLane open-source toolchain and the Sky130 Process Design Kit.
 
-It covers the entire backend VLSI pipeline from writing the RTL in Verilog to generating
-a DRC and LVS clean GDSII layout, including synthesis, floorplanning, placement,
-clock tree synthesis, routing, and signoff verification.
+It covers the entire backend VLSI pipeline from writing the RTL in Verilog to generating a DRC and LVS clean GDSII layout, including synthesis, floorplanning, placement, clock tree synthesis, routing, and signoff verification.
 
-The motivation behind this project was bridging the awareness gap that exists among
-early-year students around VLSI design. A significant part of real chip design work
-happens entirely using EDA tools on Linux, with no expensive hardware or paid licenses
-required. This project was an attempt to demonstrate that and document the journey.
+The motivation behind this project was bridging the awareness gap that exists among early-year students around VLSI design. A significant part of real chip design work happens entirely using EDA tools on Linux, with no expensive hardware or paid licenses required. This project was an attempt to demonstrate that and document the journey.
+
+---
+
+## Flow Overview
+```
+RTL (Verilog)
+     |
+Synthesis (Yosys)
+     |
+Floorplanning
+     |
+Placement (Global + Detailed)
+     |
+Clock Tree Synthesis (CTS)
+     |
+Routing (Global + Detailed)
+     |
+Signoff (DRC, LVS, STA, IR Drop)
+     |
+GDSII Generation
+```
+
+---
+
+## Tools and Technologies
+
+| Tool | Role |
+|------|------|
+| OpenLane | End-to-end RTL-to-GDS flow |
+| OpenROAD | Physical design engine |
+| Yosys | RTL synthesis |
+| Magic VLSI | DRC and extraction (via OpenLane) |
+| KLayout | Layout visualization |
+| Icarus Verilog | RTL simulation |
+| GTKWave | Waveform viewing |
+| Sky130 PDK | Process Design Kit |
 
 ---
 
@@ -55,6 +85,24 @@ required. This project was an attempt to demonstrate that and document the journ
 
 ---
 
+## Output Files Generated
+
+| File | Description |
+|------|-------------|
+| results/final/gds/alu_8bit.gds | Final GDSII layout |
+| results/final/def/alu_8bit.def | Physical design database |
+| results/final/verilog/gl/alu_8bit.v | Gate-level netlist |
+| results/final/sdf/alu_8bit.sdf | Timing annotation data |
+| results/final/spef/alu_8bit.spef | Parasitic extraction |
+| results/final/lef/alu_8bit.lef | Library exchange format |
+| results/final/lib/alu_8bit.lib | Liberty timing model |
+| reports/signoff/drc.rpt | DRC report |
+| reports/signoff/39-alu_8bit.lvs.rpt | LVS report |
+| reports/signoff/32-irdrop-VPWR.rpt | IR drop VPWR |
+| reports/signoff/32-irdrop-VGND.rpt | IR drop VGND |
+
+---
+
 ## Simulation Waveform
 
 RTL verified using Icarus Verilog with waveform viewed in GTKWave.
@@ -73,21 +121,6 @@ RTL verified using Icarus Verilog with waveform viewed in GTKWave.
 
 ### Routing View
 ![Routing](routing.png)
-
----
-
-## Tools Used
-
-| Tool | Role |
-|------|------|
-| OpenLane | End-to-end RTL-to-GDS flow |
-| OpenROAD | Physical design engine |
-| Yosys | RTL synthesis |
-| Magic VLSI | DRC and extraction (via OpenLane) |
-| KLayout | Layout visualization |
-| Icarus Verilog | RTL simulation |
-| GTKWave | Waveform viewing |
-| Sky130 PDK | Process Design Kit |
 
 ---
 
@@ -114,7 +147,14 @@ RTL verified using Icarus Verilog with waveform viewed in GTKWave.
 
 **Sarthak Tripathi**  
 Electronics Engineering (VLSI Design and Technology)  
-Jaypee Institute of Information Technology, Noida  
+Jaypee Institute of Information Technology, Noida
 
-[LinkedIn](https://www.linkedin.com/in/sarthak-tripathi-0b925b1b7/) &nbsp;|&nbsp;
-[GitHub](https://github.com/quarky-1)
+[LinkedIn](https://www.linkedin.com/in/sarthak-tripathi-0b925b1b7/) &nbsp;|&nbsp; [GitHub](https://github.com/quarky-1)
+
+---
+
+## Acknowledgements
+
+- OpenLane Team
+- OpenROAD Project
+- SkyWater PDK Initiative
